@@ -1,4 +1,3 @@
-import '../styles/home.module.css'
 import { useForm } from 'react-hook-form'
 import { getDatabase, ref, set } from "firebase/database";
 import '../Service/firebase'
