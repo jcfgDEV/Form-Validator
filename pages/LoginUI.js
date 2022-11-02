@@ -8,10 +8,7 @@ import { useState } from 'react'
 
 function Login () {
 
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [subject , setSubject] = useState('');
-    const [mensaje, setMessage] = useState('');
+    
 
     //MENSAJE DE SUCESO 
     const Notify = () => {
@@ -62,10 +59,8 @@ function Login () {
               data
         });
         Notify()
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
+        e.target.reset()
+        
     
        
       }
@@ -87,8 +82,7 @@ function Login () {
                         ref={register}
                         placeholder='Write First Name'
                         {...register('name', registerOptions.name)}
-                        value={name}
-                        onChange={e => setName(e.target.value)}
+                        
                         />
                         <span className=' text-red-500 text-lg flex pl-2 absolute'>
                         {errors?.name && errors.name.message}
@@ -100,8 +94,7 @@ function Login () {
                         type='text' 
                         placeholder="Write your email" 
                         {...register('email', registerOptions.email)}
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        
                         />
                         <span className=' text-red-500 text-lg flex pl-2 absolute'>
                         {errors?.email && errors.email.message}
@@ -114,8 +107,7 @@ function Login () {
                         type='text'
                         placeholder="Subject"
                         {...register('subject', registerOptions.subject)}
-                        value={subject}
-                        onChange={e => setSubject(e.target.value)}
+                       
                         />
                         <span className=' text-red-500 text-lg flex pl-2 absolute'>
                         {errors?.subject && errors.subject.message}
@@ -128,8 +120,7 @@ function Login () {
                         type='text' 
                         placeholder="Message"  
                         {...register('mess', registerOptions.mess)}
-                        value={mensaje}
-                        onChange={e => setMessage(e.target.value)}
+                       
                         />
                         <span className=' text-red-500 text-lg flex pl-2 absolute'>
                         {errors?.mess && errors.mess.message}
